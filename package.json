@@ -1,5 +1,5 @@
 {
-    "name": "react-social-share",
+    "name": "@foobaragency/react-social-share",
     "version": "0.0.0-semantically-released",
     "description": "A simple but robust social media share module",
     "main": "dist/cjs/index.js",
