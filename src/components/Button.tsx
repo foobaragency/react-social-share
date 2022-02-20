@@ -76,3 +76,23 @@ export const Pinterest: FC<IShareButtonProps> = (props) => {
         </ShareButton>
     );
 };
+
+export const Linkedin: FC<IShareButtonProps> = (props) => {
+    const { children, url = window.location.href } = props;
+
+    return (
+        <ShareButton {...props} domain="linkedin" url={url}>
+            {children}
+        </ShareButton>
+    );
+};
+
+export const Telegram: FC<IShareButtonProps> = (props) => {
+    const { children, url = window.location.href } = props;
+
+    return (
+        <ShareButton {...props} domain="telegram" url={url}>
+            {children}
+        </ShareButton>
+    );
+};

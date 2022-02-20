@@ -35,4 +35,12 @@ export const shareGroup: IShareGroupProps = {
         shareType: 'link',
         url: 'http://pinterest.com/pin/create/link/?url=',
     },
+    linkedin: {
+        shareType: 'link',
+        url: 'https://www.linkedin.com/sharing/share-offsite/?url=',
+    },
+    telegram: {
+        shareType: 'link',
+        url: 'https://telegram.me/share/?url=',
+    },
 };
