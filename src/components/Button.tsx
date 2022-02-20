@@ -1,33 +1,78 @@
 import React, { FC } from 'react';
 import { useShare, shareGroupKey } from '../hooks/useShare';
 
-import styles from './button.module.css';
-
 interface IShareButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     domain: shareGroupKey;
     url: string;
     subject?: string;
 }
 
-interface IComposedProps {
-    url?: string;
-    subject?: string;
-}
-
 export const ShareButton: FC<IShareButtonProps> = (props) => {
-    const { children, domain, url, subject } = props;
+    const { children, domain, url, subject, style } = props;
     const { target } = useShare();
+    const _style = { border: 'none', margin: '0px', padding: '0px', ...style };
 
     return (
-        <button {...props} className={styles.button} onClick={() => target(domain, url, subject)}>
+        <button {...props} style={_style} onClick={() => target(domain, url, subject)}>
             {children}
         </button>
     );
 };
 
-export const Print: FC<IComposedProps> = () => <ShareButton domain="print" url="nothing" />;
-export const WhatsApp: FC<IComposedProps> = ({ url = window.location.href }) => <ShareButton domain="whatsapp" url={url} />;
-export const Twitter: FC<IComposedProps> = ({ url = window.location.href }) => <ShareButton domain="twitter" url={url} />;
-export const facebook: FC<IComposedProps> = ({ url = window.location.href }) => <ShareButton domain="facebook" url={url} />;
-export const pinterest: FC<IComposedProps> = ({ url = window.location.href }) => <ShareButton domain="pinterest" url={url} />;
-export const Email: FC<IComposedProps> = ({ url = window.location.href, subject }) => <ShareButton domain="email" url={url} subject={subject} />;
+export const Print: FC<IShareButtonProps> = (props) => {
+    return (
+        <ShareButton {...props} domain="print" url="nothing">
+            {props.children}
+        </ShareButton>
+    );
+};
+
+export const Email: FC<IShareButtonProps> = (props) => {
+    const { children, url = window.location.href, subject } = props;
+
+    return (
+        <ShareButton {...props} domain="email" url={url} subject={subject}>
+            {children}
+        </ShareButton>
+    );
+};
+
+export const Whatsapp: FC<IShareButtonProps> = (props) => {
+    const { children, url = window.location.href } = props;
+
+    return (
+        <ShareButton {...props} domain="whatsapp" url={url}>
+            {children}
+        </ShareButton>
+    );
+};
+
+export const Twitter: FC<IShareButtonProps> = (props) => {
+    const { children, url = window.location.href } = props;
+
+    return (
+        <ShareButton {...props} domain="twitter" url={url}>
+            {children}
+        </ShareButton>
+    );
+};
+
+export const Facebook: FC<IShareButtonProps> = (props) => {
+    const { children, url = window.location.href } = props;
+
+    return (
+        <ShareButton {...props} domain="facebook" url={url}>
+            {children}
+        </ShareButton>
+    );
+};
+
+export const Pinterest: FC<IShareButtonProps> = (props) => {
+    const { children, url = window.location.href } = props;
+
+    return (
+        <ShareButton {...props} domain="pinterest" url={url}>
+            {children}
+        </ShareButton>
+    );
+};
