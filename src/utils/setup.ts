@@ -4,7 +4,11 @@ interface IShareGroupProps {
     [key: string]: { shareType: 'print' | 'email' | 'link'; url: string };
 }
 
-export const extendShare: IShareGroupProps = {};
+interface extendProps {
+    [key: string]: { shareType: 'link'; url: string };
+}
+
+export const extendShare: extendProps = {};
 
 export const shareGroup: IShareGroupProps = {
     print: {
@@ -31,5 +35,4 @@ export const shareGroup: IShareGroupProps = {
         shareType: 'link',
         url: 'http://pinterest.com/pin/create/link/?url=',
     },
-    ...extendShare,
 };
