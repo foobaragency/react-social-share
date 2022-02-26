@@ -14,7 +14,8 @@
         "fix": "yarn format",
         "format": "prettier --write .",
         "format:check": "prettier --check .",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky install"
     },
     "repository": {
         "type": "git",
@@ -32,10 +33,15 @@
         "@types/react": "^17.0.39",
         "@types/react-dom": "^17.0.11",
         "@typescript-eslint/eslint-plugin": "^5.12.1",
+        "@typescript-eslint/parser": "^5.12.1",
         "eslint": "^7.32.0",
         "eslint-config-airbnb": "^19.0.4",
         "eslint-config-prettier": "^8.4.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-jsx-a11y": "^6.5.1",
         "eslint-plugin-react": "^7.28.0",
+        "husky": ">=6",
+        "lint-staged": ">=10",
         "prettier": "^2.5.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
