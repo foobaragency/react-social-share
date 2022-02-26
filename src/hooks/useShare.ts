@@ -1,7 +1,7 @@
 import { shareGroup, extendShare } from '../utils/setup';
 
-export type shareGroupKey = keyof typeof shareGroup;
-type extendShareKey = keyof typeof extendShare;
+export type ShareGroupKey = keyof typeof shareGroup;
+type ExtendShareKey = keyof typeof extendShare;
 
 const openTarget = (url: string) => typeof window !== 'undefined' && window.open(encodeURI(url));
 
@@ -14,7 +14,7 @@ const sendEmail = (currentLink: string, subject: string) => {
     return openTarget(link);
 };
 
-const shareLink = (domain: shareGroupKey | extendShareKey, currentLink: string) => {
+const shareLink = (domain: ShareGroupKey | ExtendShareKey, currentLink: string) => {
     const base = shareGroup[domain] === undefined ? extendShare[domain].url : shareGroup[domain].url;
     const link = `${base}${currentLink}`;
 
@@ -22,7 +22,7 @@ const shareLink = (domain: shareGroupKey | extendShareKey, currentLink: string) 
 };
 
 export const useShare = () => {
-    const target = (domain: shareGroupKey, currentLink: string, subject?: string) => {
+    const target = (domain: ShareGroupKey, currentLink: string, subject?: string) => {
         if ((shareGroup[domain] !== undefined && shareGroup[domain].shareType) === 'print') {
             return printPage();
         }

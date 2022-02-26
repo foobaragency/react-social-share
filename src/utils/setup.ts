@@ -4,11 +4,11 @@ interface IShareGroupProps {
     [key: string]: { shareType: 'print' | 'email' | 'link'; url: string };
 }
 
-interface extendProps {
+interface ExtendProps {
     [key: string]: { shareType: 'link'; url: string };
 }
 
-export const extendShare: extendProps = {};
+export const extendShare: ExtendProps = {};
 
 export const shareGroup: IShareGroupProps = {
     print: {

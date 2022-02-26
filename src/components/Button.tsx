@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { useShare, shareGroupKey } from '../hooks/useShare';
+import { useShare, ShareGroupKey } from '../hooks/useShare';
 
 interface IShareButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-    domain: shareGroupKey;
+    domain: ShareGroupKey;
     url: string;
     subject?: string;
 }
