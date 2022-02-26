@@ -5,5 +5,8 @@
     "editor.formatOnPaste": true,
     "editor.wordWrap": "on",
     "git.ignoreLimitWarning": true,
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
 }
