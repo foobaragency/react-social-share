@@ -1,7 +1,8 @@
+![GitHub](https://img.shields.io/github/license/foobaragency/react-social-share)
+
 # react-social-share
 
-A simple but robust social media share module that facilitates sharing content on some the world's most popular social
-networks.
+A simple but robust social media share module that facilitates sharing content on some of the world's most popular social networks.
 
 ## Demo
 
@@ -20,8 +21,8 @@ This module includes components for sharing on share UI support for:
 -   Email
 -   Print
 
-The plan is to expand these components to accomodate other social media platforms. In the meantime, you can also extend
-the components yourself through a simple API.
+The plan is to expand these components to accomodate other social media platforms. In the meantime, you can also extend the components yourself
+through a simple API.
 
 ## Install
 
@@ -37,9 +38,11 @@ yarn add  @foobaragency/react-social-share
 
 ## Usage
 
-Simply import the component you want and wrap you text or icon with it. This gives you the ability to decide exactly how
-your share component should appear at any time. You only need to pass in the `url` you want to share. In some rare
-cases, you may want to style these base components. In such cases you can pass your styles as a `style` prop.
+Simply import the component you want and wrap your child node with it. This gives you the power to decide exactly how your share component should
+look. The child node could be a simple text - as in the examples used here -, an icon component, or a custom component. You only need to pass in the
+`url` you want to share. If you do not pass this prop though, the component will share the url of the page where you render it. Also, in some rare
+cases you may want to style these base components to achieve certain stylistic goals. All you need do is create and pass in your styles object as a
+`style` prop.
 
 ```js
 import { Facebook, Twitter } from ' @foobaragency/react-social-share';
@@ -62,9 +65,9 @@ export const SocialMediaShare = () => {
 
 ## Extending Usage
 
-If you need to share to a social media platform not already supported all you need is the `extendShare` object and the
-`ShareButton` component. The `extendShare` accepts key of the name of the new platform, and points to an object that
-contains `shareType` set to `link`, and `url` set to the new platform's share url.
+If you need to share to a social media platform not already supported out-of-the-box you will need the `extendShare` object and the `ShareButton`
+component. The `extendShare` accepts a key of the name of the new platform, and points to an object that contains `shareType` set to `link`, and `url`
+set to the new platform's share url.
 
 The `ShareButton` component takes the usual `url` prop and an additional `domain` prop.
 
@@ -99,8 +102,7 @@ export const SocialMediaShare = () => {
 
 ## Custom Styles
 
-This individual share components provides a style prop. This prop can be used to pass custom styles such as border radii
-and box shadow.
+These share components provide a style prop that can be used to pass custom styles such as border radii and box shadow.
 
 ```js
 import { Facebook, Twitter } from ' @foobaragency/react-social-share';
